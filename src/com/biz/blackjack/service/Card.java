@@ -26,7 +26,7 @@ public class Card {
 		Collections.addAll(dupliDelete, card);
 		System.out.println(dupliDelete);
 		int nSize = dupliDelete.size();
-		
+		System.out.println();
 		for (int i = 0; i < nSize  ; i++) {
 			cardShuffle = rnd.nextInt(rndValue);
 			System.out.println(cardShuffle);
