@@ -15,7 +15,9 @@ public class BlackJackServiceImp implements BlackJackService{
 	
 	@Override
 	public void view() {
-
+		System.out.println("게이머 카드:");
+		System.out.println("===============");
+		System.out.println("딜러 카드:");
 		
 		
 		
