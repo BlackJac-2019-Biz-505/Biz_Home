@@ -1,7 +1,8 @@
 package com.biz.blackjack.service;
 
 public interface BlackJackService {
-	public void cardReceive();
-	public void calculation();
+	public void addReceive(Card card);
+	public int getValue();
 	public void view();
+	public String receiveCardToString();
 }

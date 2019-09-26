@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class Card2 {
+public class Card3 {
 
 	Random rnd;
 	String[] card = new String[] { "A", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "K",
@@ -15,7 +15,7 @@ public class Card2 {
 	String[] figure = new String[] { "diamond", "heart", "Spade", "clover" };
 	List<String> duplFigureDelete;
 	
-	public Card2() {
+	public Card3() {
 		rnd = new Random();
 		duplCardDelete = new ArrayList<String>();
 		duplFigureDelete = new ArrayList<String>();

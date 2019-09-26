@@ -1,66 +1,55 @@
 package com.biz.blackjack.service;
 
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
-import java.util.List;
-import java.util.Random;
-
-import com.biz.blackjack.domain.User_DealerVO;
 
 public class Deck {
 
-	Random rnd;
-	String[] card = new String[] { "A", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "K",
-			"Q", "J" };
-	String[] figure = new String[] { "diamond", "heart", "Spade", "clover" };
-
-	List<String> cardList;
-	//User_DealerVO sum;
+	Card[] cards = new Card[52];
+	int locate;
 	
 	public Deck() {
-		rnd = new Random();
-		cardList = new ArrayList<String>();
+		for (int i = 0; i < cards.length; i++) {
+			cards[i] = new Card(); 			
+		}
 	}
 
-	// 카드 섞는 부분
-	public void shuffle() {
-		String fc = null;
+	// 카드 만들고 뒤섞기 + shuffle
+	public void creatCard() {
+		String symbols = "A23456789TJQK";
+		String types = "SCHD";
+		int index = 0;
 
-		int k = 0;
-		for (int i = 0; i < figure.length; i++) {
-			for (int j = 0; j < card.length; j++) {
-				fc = k+"["+figure[i]+"]" + card[j];
-				//System.out.println(fc);
-				cardList.add(fc);
-				k++;
+		for (int i = 0; i < types.length(); i++) {
+			for (int j = 0; j < symbols.length(); j++) {
+				Card tCard = new Card();
+				tCard.setSchd(types.charAt(i));
+				tCard.setSymbol(symbols.charAt(j));
+				cards[index] = tCard;
+				//System.out.print(cards[index]);
+				index++;
 			}
-		}		
-		
-		Collections.shuffle(cardList);
-		System.out.println(cardList);
-
+		}
+		shuffleCards();
+		//System.out.println(cards[0]);
 	}
-//	public void cardValue() {
-//		int total = 0;
-//		for(int i=0; i < card.length;i++) {
-//			switch(card[i]) {
-//			case "A": total += 1; break;
-//			case "two": total += 2; break;
-//			case "three": total += 3; break;
-//			case "four": total += 4; break;
-//			case "five": total += 5; break;
-//			case "six": total += 6; break;
-//			case "seven": total += 7; break;
-//			case "eight": total += 8; break;
-//			case "nine": total += 9; break;
-//			case "ten": total += 10; break;
-//			case "K": total += 10; break;
-//			case "Q": total += 10; break;
-//			case "J": total += 10; break;
-//			
-//			}
-//			sum.setUserCardSum(total);
+	
+	// shuffle 
+	public void shuffleCards() {
+		Collections.shuffle(Arrays.asList(cards));
+//		for(Card vo : cards) {
+//			System.out.print(vo);
 //		}
-		
 	}
-
+	// cards 배열 위치를 하나씩 이동하면서 카드 얻기
+	public Card getCard() {
+		Card ca = cards[locate];
+		if (locate == 51) {
+			return null;
+		}
+		locate++;
+		return ca;
+	}	
+	
+}
