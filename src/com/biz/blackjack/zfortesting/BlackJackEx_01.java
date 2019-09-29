@@ -1,8 +1,7 @@
-package com.biz.blackjack.exec;
+package com.biz.blackjack.zfortesting;
 
 import com.biz.blackjack.service.BlackJackService;
 import com.biz.blackjack.service.BlackJackServiceImp;
-import com.biz.blackjack.service.Deck3;
 
 public class BlackJackEx_01 {
 	public static void main(String[] args) {

@@ -1,11 +1,10 @@
-package com.biz.blackjack.service;
+package com.biz.blackjack.zfortesting;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-import com.biz.blackjack.domain.User_DealerVO;
 
 public class Deck3 {
 

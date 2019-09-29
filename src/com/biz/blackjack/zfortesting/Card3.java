@@ -1,4 +1,4 @@
-package com.biz.blackjack.service;
+package com.biz.blackjack.zfortesting;
 
 import java.util.ArrayList;
 import java.util.Collection;
